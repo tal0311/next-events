@@ -1,6 +1,7 @@
 import React from 'react'
-import Link from 'next/Link'
 import styles from './SingleEvent.module.css'
+import Button from './ui/Button'
+import DateIcon from './icons/date-icon'
 
 function SingleEvent({ title, image, date, location, id }) {
   const humanDate = new Date(date).toLocaleDateString('en-GB', {
@@ -19,6 +20,7 @@ function SingleEvent({ title, image, date, location, id }) {
         <div className={styles.summery}>
           <h2>{title}</h2>
           <div className={styles.date}>
+            <DateIcon />
             <time>{humanDate}</time>
           </div>
           <div className={styles.address}>
@@ -27,7 +29,7 @@ function SingleEvent({ title, image, date, location, id }) {
         </div>
 
         <div className={styles.actions}>
-          <Link href={routeLink}> EXPLORE EVENT</Link>
+          <Button link={routeLink}>EXPLORE EVENT</Button>
         </div>
       </div>
     </li>
